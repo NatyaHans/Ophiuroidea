@@ -20,10 +20,7 @@
 ## Data collected: Morphological character data and COI, ITS and 16S)
        - Made gene trees using RAxML
        - Made species tree(concatenated alignments/supermatrix) using RAxML
-       - Need to do Species Delimitation
-       
-       
-
+       - Need to do Species Delimitation : ABGD and GMYC 
 # References:
 1. [Antitropical distributions and species delimitation in a group of ophiocomid brittle stars(Echinodermata: Ophiuroidea: Ophiocomidae)](https://www.sciencedirect.com/science/article/pii/S1055790314001857)
 
