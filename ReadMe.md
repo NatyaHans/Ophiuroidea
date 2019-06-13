@@ -4,6 +4,8 @@
 	
 ## PART I: Ancestral state reconstructions (already done using Mesquite)
 	- Data used: Tree and morphological characters
+	- Done using Mesquite (by Tania)
+	- Done using RevBayes (by Natya)-ongoing 
 	
 ## PART II:  Divergence times estimation (cannot be done until we get the alignments)
 ### Aim 1: Determining relationships among living species, so branch lengths can be transformed using either a) strict or b) relaxed clock model.
