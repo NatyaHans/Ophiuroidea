@@ -7,11 +7,8 @@
 	- Done using Mesquite (by Tania)
 	- Done using RevBayes (by Natya)-ongoing 
 	
-> Parting
 
-
-
-## PART II:  Divergence times estimation (cannot be done until we get the alignments)
+> ## PART II:  Divergence times estimation (cannot be done until we get the alignments)
 ### Aim 1: Determining relationships among living species, so branch lengths can be transformed using either a) strict or b) relaxed clock model.
 	 
 	 - Data needed: Molecular sequence data (so we only get relative ages-since no geolofical info is provided)
