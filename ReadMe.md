@@ -23,7 +23,7 @@
        
 
 # References:
-1. Antitropical distributions and species delimitation in a group of ophiocomid brittle stars[(Echinodermata: Ophiuroidea: Ophiocomidae)https://www.sciencedirect.com/science/article/pii/S1055790314001857]
+1. [Antitropical distributions and species delimitation in a group of ophiocomid brittle stars(Echinodermata: Ophiuroidea: Ophiocomidae)](https://www.sciencedirect.com/science/article/pii/S1055790314001857)
 
 2. 
 
