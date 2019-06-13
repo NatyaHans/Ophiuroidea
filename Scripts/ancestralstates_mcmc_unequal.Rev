@@ -1,0 +1,102 @@
+#-----------------------------------------------------------------#
+# Inferring ancestral states and rates of morphological evolution #
+#-----------------------------------------------------------------#
+
+# Reading in the Data 
+
+# Import the morphological character matrix #
+# this file contains only the taxa for which morphological characters are available #
+morpho <- readDiscreteCharacterData("Data/Ophiolepididae_molecular_for_Natya.nex")
+
+# Note that the readTrees function always returns a vector of trees, 
+phy <- readTrees("Data/sord3_lepid2_med.tre")[1]
+
+
+# Number of MCMC generations
+gen<-10000
+
+# Create some vector for the moves and monitors of this analysis
+moves    = VectorMoves()
+monitors = VectorMonitors()
+
+# specifying the substitution model
+# assuming 9 free rate parameters
+# assuming exponential prior distribution on each rate
+# assuming 10 events happened along the tree, so rate is tree length divided by 10
+rate_pr := phy.treeLength() / 10
+
+# creating 6 independepent rate variables model #
+rate_12 ~ dnExponential(rate_pr)
+rate_13 ~ dnExponential(rate_pr)
+rate_21 ~ dnExponential(rate_pr)
+rate_23 ~ dnExponential(rate_pr)
+rate_31 ~ dnExponential(rate_pr)
+rate_32 ~ dnExponential(rate_pr)
+
+# appplying a scaling move to each rate variable
+moves.append( mvScale( rate_12, weight=2 ) )
+moves.append( mvScale( rate_13, weight=2 ) )
+moves.append( mvScale( rate_21, weight=2 ) )
+moves.append( mvScale( rate_23, weight=2 ) )
+moves.append( mvScale( rate_31, weight=2 ) )
+moves.append( mvScale( rate_32, weight=2 ) )
+
+# putting rates together in a matrix
+Q_morpho := fnFreeK( [ rate_12, rate_13, rate_21, rate_23, rate_31, rate_32 ], rescale=false )
+
+
+
+rf_prior <- [1,1,1]
+rf ~ dnDirichlet(rf_prior)
+moves.append( mvBetaSimplex( rf, weight=2 ) )
+moves.append( mvDirichletSimplex( rf, weight=2 ) )
+
+
+
+
+
+
+
+# Combine all of our elements into a CTMC.
+phyMorpho ~ dnPhyloCTMC(tree=phy, Q=Q_morpho, rootFrequencies=rf, type="Standard")
+phyMorpho.clamp(morpho)
+
+
+
+########
+# MCMC #
+########
+
+# initialize the model object #
+mymodel = model(phy)
+# Create a vector of monitors #
+# 1. for the full model #
+monitors.append( mnModel(filename="Output/freeK.log", printgen=1) )
+# 2. and a few select parameters to be printed to the screen #
+monitors.append( mnScreen(printgen=100) )
+# 3. add an ancestral state monitor
+monitors.append( mnJointConditionalAncestralState(tree=phy,
+                                                  ctmc=phyMorpho,
+                                                  filename="Output/freeK.states.txt",
+                                                  type="Standard",
+                                                  printgen=1,
+                                                  withTips=true,
+                                                  withStartStates=false) )
+
+# Initialize the MCMC object #
+mymcmc = mcmc(mymodel, monitors, moves, nruns=2, combine="mixed")
+
+# Run the MCMC #
+mymcmc.run(generations=gen, tuningInterval=200)
+
+# check the performance of the MCMC/moves
+mymcmc.operatorSummary()
+
+
+# Read in the tree trace and construct the ancestral states
+anc_states = readAncestralStateTrace("Output/freeK.states.txt")
+anc_tree = ancestralStateTree(tree=phy, ancestral_state_trace_vector=anc_states, include_start_states=false, file="Output/ase_freeK.tree", burnin=0.25, summary_statistic="MAP", site=1)
+writeNexus( anc_tree, filename="Output/ase_freeK.tree" )
+
+# Quit RevBayes #
+q()
