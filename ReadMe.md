@@ -3,9 +3,9 @@
 	-  Genomic data and phylogeny made by collaborators in Australia?
 	
 ## PART I: Ancestral state reconstructions (already done using Mesquite)
->	- Data used: Tree and morphological characters
->	- Done using Mesquite (by Tania)
->	- Done using RevBayes (by Natya)-ongoing 
+	- Data used: Tree and morphological characters
+	- Done using Mesquite (by Tania)
+	- Done using RevBayes (by Natya)-ongoing 
 	
 
 > ## PART II:  Divergence times estimation (cannot be done until we get the alignments)
@@ -19,9 +19,9 @@
 
 > # Pipeline for Brittle Star Project 2 (Species Complex)
 > ## Data collected: Morphological character data and COI, ITS and 16S)
-       - Made gene trees using RAxML
-       - Made species tree(concatenated alignments/supermatrix) using RAxML
-       - Need to do Species Delimitation : ABGD and GMYC 
+>       - Made gene trees using RAxML
+>       - Made species tree(concatenated alignments/supermatrix) using RAxML
+>       - Need to do Species Delimitation : ABGD and GMYC 
 
 # References:
 1. [Antitropical distributions and species delimitation in a group of ophiocomid brittle stars(Echinodermata: Ophiuroidea: Ophiocomidae)](https://www.sciencedirect.com/science/article/pii/S1055790314001857)
