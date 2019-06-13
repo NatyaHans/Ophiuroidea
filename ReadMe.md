@@ -21,14 +21,12 @@
        - Need to do Species Delimitation
        
        
-From Tania:
-The Tree information I have is for all the phylogenomic data (which I dont have any sequences) all I have is the morphological matrix and the molecular tree. So that is one project, the one I'm doing the ancestral reconstruction.
-The second project is the one of the species complex, which I have the sequences, and the one I need to do the species delimitation methods etc ..
 
-so the one I'm doing the ancestral reconstruction is with all the morphological data I have, I'm looking at those characters in the molecular tree (the  phylogenomic data). Which is all I have for the moment. 
+# References:
+1. Antitropical distributions and species delimitation in a group of ophiocomid brittle stars[(Echinodermata: Ophiuroidea: Ophiocomidae)https://www.sciencedirect.com/science/article/pii/S1055790314001857]
 
-The species complex or cryptic diversity is my second project which includes a single species, which are multiple species. The data that I'm working with three different genes (COI, 16s and ITS), the reason I need to do the delimitation analysis. This data I have everything
+2. 
 
-
-https://onlinelibrary.wiley.com/doi/pdf/10.1111/jbi.13388
+https://www.sciencedirect.com/science/article/pii/S1055790318302811?via%3Dihub
+ https://onlinelibrary.wiley.com/doi/pdf/10.1111/jbi.13388
 
