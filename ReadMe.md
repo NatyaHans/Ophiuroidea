@@ -4,14 +4,14 @@
 
 
 
-## PART I: Ancestral state reconstructions done using RevBayes
+## PART I: Ancestral state reconstructions
 	- Data used:
 	- Assumptions:
 	- Scripts:
 
 
 
-## PART II:  Divergence times estimation using RevBayes (cannot be done until we get the alignments)
+## PART II:  Divergence times estimation (cannot be done until we get the alignments)
 ### Aim 1: Determining relationships among living species, so branch lengths can be transformed using either a) strict or b) relaxed clock model.
 	 
 	 - Data needed: Molecular sequence data (so we only get relative ages-since no geolofical info is provided)
