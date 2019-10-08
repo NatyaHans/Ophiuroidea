@@ -26,20 +26,22 @@
 	- # Stochastic mapping - SIMMAP  #
 	- First, we need to assess the Q matrix including rates for shift between states. So, we have to know which model 
 	fit our data: Equal rate (ER) or all-rates-different (ARD) models.
-	- If I'm comparing diferent models I need to use AIC scores
+	- If I'm comparing diferent models I need to use AIC scores.
+	
 	-The command pchisq(value,df) gives the percentage of the cumulative distribution function for chisquare that lies to
 	the left of the given value for a desired degree of freedom (df). 
 	The following command gives the percentage of the chisquare distribution that lies to the 
 	right of the observed likelihood difference for the ER and ARD models.
 	
-###### if p>0.05, we do not accept the more heavily parameterized ARD model, and instead choose the single-parameter ER model. If p<0.05, we do accept ARD model. 
+	## if p>0.05, we do not accept the more heavily parameterized ARD model, and instead choose the single-parameter ER 	model. If p<0.05, we do accept ARD model. 
+	
+	- We can now produce the stochastic mapping of the "trait" uing the make.simmap() from the phytools package. 
+	We simulate stochastic character maps using the equal rate (ER) model, a priori on the root state (pi="estimated", 	which estimated by numerically solving pi*Q = 0), a samples of Q matrices from the posterior probability distribution of 	Q using MCMC (Markov chain Monte Carlo).    
+	- We can laso compute the state frequencies from the stochastic maps for each internal nodes. Posterior probabilities 		are illustrated by pies 
 
-#### We can now produce the stochastic mapping of the "trait" uing the make.simmap() from the phytools package. We simulate stochastic character maps using the equal rate (ER) model, a priori on the root state (pi="estimated", which estimated by numerically solving pi*Q = 0), a samples of Q matrices from the posterior probability distribution of Q using MCMC (Markov chain Monte Carlo).    
 
 
-
-	- Data used: Tree and morphological characters 140 characters, 113 species (including fossils)
-	- Done using Mesquite (by Tania) using the time calibrated tree from O'Hara
+	
 	- Done using RevBayes (by Natya)-ongoing 
 
 
