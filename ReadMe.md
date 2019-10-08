@@ -19,7 +19,8 @@
 			- Q matrix (to obtain the information at the root) with the ER or ARD 
 			- The object ML is a list that contains the overall likelihood score ($loglik), 
 			the evolutionary rate ($rates), the standard error ($se), a matrix indicating 
-			the probabilities of change among all possibl states ($index.matrix), and matrix comprised of the 			marginal likelihood of each character state at each noe ($lik.anc). 
+			the probabilities of change among all possibl states ($index.matrix),
+			and matrix comprised of the marginal likelihood of each character state at each noe ($lik.anc). 
 		- Stochastic mapping - SIMMAP  
 		
 
