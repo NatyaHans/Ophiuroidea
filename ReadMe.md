@@ -1,12 +1,32 @@
 # Pipeline for Brittle Star Project 1
 	-  Morphological Data collected by Tania Pineda-Enrique
-	-  Genomic data and phylogeny made by collaborators in Australia? HEllo 
+	-  Genomic data and time calibrated ultrametic tree made by O'Hara etal
 	
 	
-## PART I: Ancestral state reconstructions (already done using Mesquite)
-	- Data used: Tree and morphological characters
-	- Done using Mesquite (by Tania)
+## PART I: Ancestral state reconstructions (using R) (-already done using Mesquite-) 
+	1.- Construct a new time calibrated phylogeny in Beast 
+		- following the topology of the molecular tree (constrain - monophyletic groups) (Prior)
+		- including the assumption of the position of the fossil data (Prior)
+	- Data used: nexus file with the morphological matrix
+		- The name of species should be the same for all the files to be consistent 
+		
+	2.- Ancestral state reconstruction for Discrete traits 
+		- In R using packages "ape" and "ace" 
+		- One trait separately to test the ecological diversification: life history -type of larvae, ecology - type of habitat, distribution - template vs tropcial, batymethric range - shallow, deep, both. 
+		-  Maximum likelihood - ML 
+			- ARD = all rate different / ER = equal rate (choose between this two models) 
+			- Q matrix (to obtain the information at the root) with the ER or ARD 
+			- The object ML is a list that contains the overall likelihood score ($loglik), the evolutionary rate ($rates), the standard error ($se), a matrix indicating the probabilities of change among all possibl states ($index.matrix), and matrix comprised of the marginal likelihood of each character state at each noe ($lik.anc). 
+		- Stochastic mapping - SIMMAP  
+		
+
+
+	- Data used: Tree and morphological characters 140 characters, 113 species (including fossils)
+	- Done using Mesquite (by Tania) using the time calibrated tree from O'Hara
 	- Done using RevBayes (by Natya)-ongoing 
+
+
+
 	
 
 > ## PART II:  Divergence times estimation (cannot be done until we get the alignments)
@@ -19,11 +39,11 @@
 
 
 > # Pipeline for Brittle Star Project 2 (Species Complex)
-> ## Data collected: Morphological character data and COI, ITS and 16S)
+> ## Data collected: Morphological character data and COI, ITS, 16S, 28S)
 >       - Made gene trees using RAxML
 >       - Made species tree(concatenated alignments/supermatrix) using RAxML
 >       - Need to do Species Delimitation : ABGD and GMYC 
-
+> What needs to be done with help of Natya 
 # References:
 1. [Antitropical distributions and species delimitation in a group of ophiocomid brittle stars(Echinodermata: Ophiuroidea: Ophiocomidae)](https://www.sciencedirect.com/science/article/pii/S1055790314001857)
 
