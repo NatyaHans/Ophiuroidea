@@ -1,6 +1,7 @@
 # Pipeline for Brittle Star Project 1
 	-  Morphological Data collected by Tania Pineda-Enrique
-	-  Genomic data and phylogeny made by collaborators in Australia?
+	-  Genomic data and phylogeny made by collaborators in Australia? HEllo 
+	
 	
 ## PART I: Ancestral state reconstructions (already done using Mesquite)
 	- Data used: Tree and morphological characters
