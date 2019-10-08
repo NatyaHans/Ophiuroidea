@@ -12,11 +12,14 @@
 		
 	2.- Ancestral state reconstruction for Discrete traits 
 		- In R using packages "ape" and "ace" 
-		- One trait separately to test the ecological diversification: life history -type of larvae, ecology - type of habitat, distribution - template vs tropcial, batymethric range - shallow, deep, both. 
+		- One trait separately to test the ecological diversification: life history -type of larvae, 
+		ecology - type of habitat, distribution - template vs tropcial, batymethric range - shallow, deep, both. 
 		-  Maximum likelihood - ML 
 			- ARD = all rate different / ER = equal rate (choose between this two models) 
 			- Q matrix (to obtain the information at the root) with the ER or ARD 
-			- The object ML is a list that contains the overall likelihood score ($loglik), the evolutionary rate ($rates), the standard error ($se), a matrix indicating the probabilities of change among all possibl states ($index.matrix), and matrix comprised of the marginal likelihood of each character state at each noe ($lik.anc). 
+			- The object ML is a list that contains the overall likelihood score ($loglik), 
+			the evolutionary rate ($rates), the standard error ($se), a matrix indicating 
+			the probabilities of change among all possibl states ($index.matrix), and matrix comprised of the 			marginal likelihood of each character state at each noe ($lik.anc). 
 		- Stochastic mapping - SIMMAP  
 		
 
