@@ -23,7 +23,8 @@
 		the probabilities of change among all possibl states ($index.matrix), and matrix comprised 
 		of the marginal likelihood of each character state at each noe ($lik.anc). 
 			
-	- # Stochastic mapping - SIMMAP  #
+	- # Stochastic mapping - SIMMAP  # 
+		- I need to do it again for each trait 
 	- First, we need to assess the Q matrix including rates for shift between states. So, we have to know which model 
 	fit our data: Equal rate (ER) or all-rates-different (ARD) models.
 	- If I'm comparing diferent models I need to use AIC scores.
@@ -33,16 +34,32 @@
 	The following command gives the percentage of the chisquare distribution that lies to the 
 	right of the observed likelihood difference for the ER and ARD models.
 	
-	## if p>0.05, we do not accept the more heavily parameterized ARD model, and instead choose the single-parameter ER 	model. If p<0.05, we do accept ARD model. 
+	## if p>0.05, we do not accept the more heavily parameterized ARD model, and instead choose the single-parameter 
+	ER model. If p<0.05, we do accept ARD model. 
 	
 	- We can now produce the stochastic mapping of the "trait" uing the make.simmap() from the phytools package. 
-	We simulate stochastic character maps using the equal rate (ER) model, a priori on the root state (pi="estimated", 	which estimated by numerically solving pi*Q = 0), a samples of Q matrices from the posterior probability distribution of 	Q using MCMC (Markov chain Monte Carlo).    
+	We simulate stochastic character maps using the equal rate (ER) model, a priori on the root state 
+	(pi="estimated", which estimated by numerically solving pi*Q = 0), a samples of Q matrices from the posterior 		probability distribution of Q using MCMC (Markov chain Monte Carlo).    
 	- We can laso compute the state frequencies from the stochastic maps for each internal nodes. Posterior probabilities 		are illustrated by pies 
 
 
-
+	3.- Lineage of diversification (transitions of two states in the diversification) 
+		- Extinction and Speciation 
+		- to know the transition between one trait and another: Do we know what is the rate of trait transition?
 	
-	- Done using RevBayes (by Natya)-ongoing 
+	4.- Rate of evolution (morphological data) 
+		- Using a Brownian motion 
+		- One rate for all the species 
+		- One rate for the tropical 
+		- One rate for the temperate 
+		- One rate for the deep, shallow, larvae et.c. 
+		-AIC value: what have an impact on the morphology of the species 
+	
+	5.- Morphospace 
+		- PcoA in R 
+		- Traits: body size (range), number of papillae, scales, laps etc. 
+		- Models of trait evolution 
+			OUI- univarate data / mvMorph- multivariate data 
 
 
 
