@@ -1,14 +1,19 @@
 # Pipeline for Brittle Star Project 1
-	-  Morphological Data collected by Tania Pineda-Enrique
+	-  Morphological Data collected by Tania
 	-  Genomic data and time calibrated ultrametic tree made by O'Hara etal
 	
 	
-## PART I: Ancestral state reconstructions (using R) (-already done using Mesquite-) 
+## PART I: Divergence times estimation 
+ Aim 1: Determining relationships among living species, so branch lengths can be transformed using either a) strict or b) relaxed clock model.
+ Aim 2: Using fossil records to calibrate absolute times a) node dating b) fossilized birth death process
+
 	1.- Construct a new time calibrated phylogeny in Beast 
 		- following the topology of the molecular tree (constrain - monophyletic groups) (Prior)
 		- including the assumption of the position of the fossil data (Prior)
 	- Data used: nexus file with the morphological matrix
 		- The name of species should be the same for all the files to be consistent 
+		
+## PART II: Ancestral state reconstructions (using R) (-already done using Mesquite-) 
 		
 	2.- Ancestral state reconstruction for Discrete traits 
 		- In R using packages "ape" and "ace" "phytools"
@@ -42,7 +47,7 @@
 	(pi="estimated", which estimated by numerically solving pi*Q = 0), a samples of Q matrices from the posterior 		probability distribution of Q using MCMC (Markov chain Monte Carlo).    
 	- We can laso compute the state frequencies from the stochastic maps for each internal nodes. Posterior probabilities 		are illustrated by pies 
 
-
+> ## What needs to be done with help of Natya ##
 	3.- Lineage of diversification (transitions of two states in the diversification) 
 		- Extinction and Speciation 
 		- to know the transition between one trait and another: Do we know what is the rate of trait transition?
@@ -55,31 +60,40 @@
 		- One rate for the deep, shallow, larvae et.c. 
 		-AIC value: what have an impact on the morphology of the species 
 	
-	5.- Morphospace 
+> ## What needs to be done with help of Natya ##	
+	5.- Morphospace --- I don't know how to do this!!
 		- PcoA in R 
-		- Traits: body size (range), number of papillae, scales, laps etc. 
-		- Models of trait evolution 
-			OUI- univarate data / mvMorph- multivariate data 
+		- Traits: body size (range), number of papillae, scales, laps, choose all the characters that are informative (5 to 10 ch) 
+	
+	6.- Continous traits 
+	 We’ll start by loading in a phylogenetic tree and data into R. Using the function OUwie() from the R package OUwie,
+	 we will compare the fit of different models: one rate (sigma squared) Brownian motion (BM) model (BM1); a two-rates 
+	 BM model (BMS); a Ornstein-Ulhenbeck (OU) model with a single optimum for all species (OU1); a OU model different 
+	 state means (theta) and a single alpha and sigma squared acting all regimes (OUM); a OU model that assumes different
+	 optima (theta) as well as sigma squared (OUMV); a OU model that assumes different optima (theta) as well as alpha
+	 (OUMA); a OU model that assumes different optima (theta) as well as sigma squared and alpha (OUMVA). 
+	 We’ll be using published data for damselfishes.
+	- Packages in R: OUwie, phytools and geiger
+	- OUI- univarate data / mvMorph- multivariate data - In this case I need to use mvmorph 
 
 
+# Pipeline for Chapter 2 (Species Complex- Cryptic species)
+> ## Data collected: Morphological character data and COI, ITS, 16S, 28S
+	- Total of sequences: xxx / xx outgroup 
+	- Already Done: Species tree (concatenated alignments/supermatrix) - Beast (Tania) 
+	-Outpout: species tree (ultrametric tree) performed in Beast 
+	- Already Done: IQtree (concatenated aligngments)- Tania 
+	
+> ## What needs to be done with help of Natya ##
+	- Partition finder or Jmodel test for best model 
+    	- Species Delimitation : ABGD, GMYC, Stacey (*Beast)
+	
+	- PCA for the morphological characters (8 ch. including the lateral arm plate data, size: disc diameter vs arm lenght) 
 
 	
 
-> ## PART II:  Divergence times estimation (cannot be done until we get the alignments)
-> ### Aim 1: Determining relationships among living species, so branch lengths can be transformed using either a) strict or b) relaxed clock model.
-	 
->	 - Data needed: Molecular sequence data (so we only get relative ages-since no geolofical info is provided)
->         - Ask Tania's Collaborators for their molecular seq alignments they used for the tree( that was built in BEAST?
-> ### Aim 2: Using fossil records to calibrate absolute times a) node dating b) fossilized birth death process
-> ### Aim 3: Total evidence dating (requires fossil information -ask Tania if she has it)
 
 
-> # Pipeline for Brittle Star Project 2 (Species Complex)
-> ## Data collected: Morphological character data and COI, ITS, 16S, 28S)
->       - Made gene trees using RAxML
->       - Made species tree(concatenated alignments/supermatrix) using RAxML
->       - Need to do Species Delimitation : ABGD and GMYC 
-> What needs to be done with help of Natya 
 # References:
 1. [Antitropical distributions and species delimitation in a group of ophiocomid brittle stars(Echinodermata: Ophiuroidea: Ophiocomidae)](https://www.sciencedirect.com/science/article/pii/S1055790314001857)
 
