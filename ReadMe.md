@@ -86,30 +86,31 @@
 	- Outpout: species tree (ultrametric tree) performed in Beast 
 	
 	- Partition finder best schemes: 
-Nexus formatted character sets
-begin sets;
-	charset Subset1 = 1-496;
-	charset Subset2 = 497-1423;
-	charset Subset3 = 1424-2097\3;
-	charset Subset4 = 1425-2097\3;
-	charset Subset5 = 1426-2097\3;
-	charset Subset6 = 2098-2581\3 2099-2581\3 2100-2581\3;
-	charpartition PartitionFinder = Group1:Subset1, Group2:Subset2, Group3:Subset3, Group4:Subset4, Group5:Subset5, Group6:Subset6;
-end;
+	Nexus formatted character sets
+	begin sets;
+		charset Subset1 = 1-496;
+		charset Subset2 = 497-1423;
+		charset Subset3 = 1424-2097\3;
+		charset Subset4 = 1425-2097\3;
+		charset Subset5 = 1426-2097\3;
+		charset Subset6 = 2098-2581\3 2099-2581\3 2100-2581\3;
+		charpartition PartitionFinder = Group1:Subset1, Group2:Subset2, Group3:Subset3, Group4:Subset4, 			Group5:Subset5, Group6:Subset6;
+		end;
+		
 	- IQtree (concatenated aligngments)- Tania 
-#nexus
-begin sets;
-	charset Subset1 = 1-496;
-	charset Subset2 = 497-1423;
-	charset Subset3 = 1424-2097\3;
-	charset Subset4 = 1425-2097\3;
-	charset Subset5 = 1426-2097\3;
-	charset Subset6 = 2098-2581\3 2099-2581\3 2100-2581\3;
-	charpartition PartitionFinder = TVM+G:Subset1, HKY+I:Subset2, GTR+I+G:Subset3, TRN+I+G:Subset4, F81+I:Subset5, TVM+I+G:Subset6;
-end;
+		#nexus
+	begin sets;
+		charset Subset1 = 1-496;
+		charset Subset2 = 497-1423;
+		charset Subset3 = 1424-2097\3;
+		charset Subset4 = 1425-2097\3;
+		charset Subset5 = 1426-2097\3;
+		charset Subset6 = 2098-2581\3 2099-2581\3 2100-2581\3;
+		charpartition PartitionFinder = TVM+G:Subset1, HKY+I:Subset2, GTR+I+G:Subset3, TRN+I+G:Subset4, F81+I:Subset5, 			TVM+I+G:Subset6;
+		end;
 
-MRBayes 
-	begin mrbayes;
+	MRBayes 
+		begin mrbayes;
 
 	charset Subset1 = 1-496;
 	charset Subset2 = 497-1423;
