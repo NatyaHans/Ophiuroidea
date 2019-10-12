@@ -138,6 +138,8 @@ end;
 > ## What needs to be done with help of Natya ##
 	- Once I have the ultrametic tree from (Beast or MRBayes or RaxML)
     	- Species Delimitation : ABGD, GMYC, Stacey (*Beast)
+	- for the script in R on how to the GMYC and using BEAST in terminal 
+	https://francoismichonneau.net/gmyc-tutorial/
 	
 	- PCA for the morphological characters (8 ch. including the lateral arm plate data, size: disc diameter vs arm lenght) 
 
